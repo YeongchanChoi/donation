@@ -22,7 +22,7 @@ export default function Globepage() {
   }, []);
 
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
+    <div className="bg-[#f0e6ff]" style={{ width: "100vw", height: "100vh" }}>
       <Canvas>
         <ambientLight intensity={0.5} />
         <directionalLight position={[5, 5, 5]} />
