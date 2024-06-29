@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const tabs = [
-  { name: "Hair Style", key: "hair-style" },
-  { name: "Hair Color", key: "hair-color" },
-  { name: "Skin Tone", key: "skin-tone" },
-  { name: "Eye Color", key: "eye-color" },
-  { name: "Outfit", key: "outfit" },
+  { name: "머리 스타일", key: "hair-style" },
+  { name: "머리 색상", key: "hair-color" },
+  { name: "피부 색", key: "skin-tone" },
+  { name: "눈 색깔", key: "eye-color" },
+  { name: "외형", key: "outfit" },
 ];
 
 const options = {
@@ -81,7 +82,7 @@ export function Comp() {
           {tabs.map((tab) => (
             <button
               key={tab.key}
-              className={`text-sm font-medium ${activeTab === tab.key ? "text-primary" : "text-muted-foreground text-[#6b6b6b]"}`}
+              className={`text-sm font-medium ${activeTab === tab.key ? "text-[#ff7373]" : "text-muted-foreground text-[#6b6b6b]"}`}
               onClick={() => setActiveTab(tab.key)}
             >
               {tab.name}
@@ -89,10 +90,12 @@ export function Comp() {
           ))}
         </div>
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-bold">Character Customization</h2>
-          <Button className="ml-auto bg-[#cacaca]" onClick={handleSubmit}>
-            Submit
-          </Button>
+          <h2 className="text-2xl font-bold">캐릭터</h2>
+          <Link href={"/globe"}>
+            <Button className="ml-auto bg-[#cacaca]" onClick={handleSubmit}>
+              만들기
+            </Button>
+          </Link>
         </div>
         <div className="grid grid-cols-1 gap-6">
           {options[activeTab] && (
