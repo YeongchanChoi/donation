@@ -4,7 +4,7 @@ import { OrbitControls, Html } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
-export default function Home() {
+export default function Globepage() {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
